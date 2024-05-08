@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
+import { Dialog , DialogTrigger } from "@/components/ui/dialog"
 import { TableRow, TableCell } from "@/components/ui/table"
 import { ArrowRight, X, Search} from "lucide-react"
 import { OrderDetails } from "./order-details"
