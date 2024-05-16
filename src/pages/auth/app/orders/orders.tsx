@@ -11,14 +11,19 @@ import { z } from "zod";
 export function Orders(){
     const [seachParams, setSeachParams] = useSearchParams()
 
+    const orderId = seachParams.get('orderId')
+    const customerName = seachParams.get('customerName')
+    const status = seachParams.get('status')
+
+
     const pageIndex = z.coerce
     .number()
     .transform(page => page - 1)
     .parse(seachParams.get('page') ?? '1')
 
     const {data: result} = useQuery({
-        queryKey: ['orders', pageIndex],
-        queryFn: () => getOrders({ pageIndex }),
+        queryKey: ['orders', pageIndex, orderId, customerName, status],
+        queryFn: () => getOrders({ pageIndex, orderId, customerName, status: status === 'all' ? null: status }),
     })
 
 
