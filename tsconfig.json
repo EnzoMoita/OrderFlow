@@ -25,7 +25,10 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+
+    /* Debugging */
+    "sourceMap": true  // Adiciona esta linha para habilitar a geração de sourcemaps
   },
   "include": ["src", "test"],
   "references": [{ "path": "./tsconfig.node.json" }]
